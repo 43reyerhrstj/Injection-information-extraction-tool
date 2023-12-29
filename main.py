@@ -2,9 +2,6 @@ import requests
 import re
 
 def Connect(url,requests_mode,headers,data,cookies,characteristic,mode,Mark):
-    proxy={
-        'http':'127.0.0.1:8080'
-    }
     start_url=url
     for len in range(1,100):
         if Mark=='user':
@@ -20,7 +17,7 @@ def Connect(url,requests_mode,headers,data,cookies,characteristic,mode,Mark):
         if mode=='url':
             url=start_url+'?'+param_name+'='+param_value+'-'+sql
         if requests_mode=='get':
-            s=requests.get(url,headers=headers,cookies=cookies,proxies=proxy)
+            s=requests.get(url,headers=headers,cookies=cookies)
             matchs=re.search(characteristic,s.text)
             if matchs:
                 if Mark == 'user':
