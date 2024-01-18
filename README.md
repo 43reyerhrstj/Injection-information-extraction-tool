@@ -31,13 +31,13 @@ select user();
 ![image-20231228150347594](images/image-20231228150347594.png)
 
 ```sql
-select database();
+select authentication_string from mysql.user where user='root';
 ```
 
 ![image-20231228151706733](images/image-20231228151706733.png)
 
 ```sql
-select authentication_string from mysql.user where user='root';
+select database();
 ```
 
 ![image-20231228151807325](images/image-20231228151807325.png)
